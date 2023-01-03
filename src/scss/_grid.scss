@@ -1,0 +1,49 @@
+.grids {
+
+    display: flex;
+    margin-left: -20px;
+
+    &.grid-center {
+
+        justify-content: center;
+    }
+
+    .col-grid {
+
+        flex-grow: 1;
+        max-width: 270px;
+        margin-left: 20px;
+
+        .col-circle {
+
+            position: relative;
+            width: 100%;
+            padding: 30px;
+            padding-bottom: 87%;
+            border-radius: 50%;
+
+            &::after {
+
+                position: absolute;
+                top: -20px;
+                left: -20px;
+                width: calc(100% + 40px);
+                height: calc(100% + 40px);
+                content: '';
+                border-radius: 50%;
+                border: 1px solid $green;
+            }
+            
+            h2 {
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                text-align: center;
+                @include transform(translate(-50%, -50%));
+                z-index: 2;
+            }
+        }
+    }
+
+}

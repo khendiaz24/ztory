@@ -1,0 +1,65 @@
+h1 {
+
+	font-size: rem(60px);
+	font-family: $montserrat;
+	font-weight: 500;
+
+	@include media-breakpoint-down(lg) {
+
+		font-size: rem(45px);
+	}
+}
+
+h2 {
+
+	font-size: rem(50px);
+	font-family: $montserrat;
+	font-weight: 500;
+	margin-bottom: 30px;
+
+	@include media-breakpoint-down(lg) {
+
+		font-size: rem(40px);
+	}
+}
+
+h3 {
+
+	display: flex;
+	font-size: rem(38px);
+	font-family: $montserrat;
+	font-weight: 500;
+	margin-bottom: 20px;
+
+	em {
+
+		font-size: rem(18px);
+		font-style: normal;
+		margin-right: 10px;
+		color: $green;
+	}
+
+	@include media-breakpoint-down(lg) {
+
+		font-size: rem(32px);
+	}
+}
+
+h4 {
+
+	font-size: rem(22px);
+	font-family: $montserrat;
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+.lead {
+
+	font-size: rem(18px);
+	font-weight: 300;
+}
+
+.lead-big {
+
+	font-size: rem(22px);
+}
