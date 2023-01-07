@@ -29,7 +29,7 @@ var ui_slider = (function(document) {
 
 				swipe = new Swiper(swipe, {
 					spaceBetween: 20,
-					slidesPerView: perviewSm,
+					slidesPerView: 1,
 					effect: effect,
 					loop: myloop,
 					centeredSlides: center,
