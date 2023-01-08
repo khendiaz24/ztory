@@ -25,8 +25,6 @@ var ui_slider = (function(document) {
 				var myloop = Boolean(loop);
 				var mycenter = (center);
 
-				console.log(mycenter, center)
-
 				swipe = new Swiper(swipe, {
 					spaceBetween: 20,
 					slidesPerView: 1,
