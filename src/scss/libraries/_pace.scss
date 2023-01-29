@@ -45,7 +45,7 @@ body:before,body:after { @include transition(opacity .4s ease-in-out); }
 
   position: relative;
   width: 150px;
-  height: 30px;
+  height: 31px;
   background: url('../images/page_template/loading_logo.png') no-repeat center;
   background-size: 100%;
   z-index: 2;

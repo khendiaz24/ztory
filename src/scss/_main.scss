@@ -31,7 +31,7 @@ main {
 }
 .container {
 
-  max-width: 1320px;
+  max-width: 1504px;
 }
 
 .zx1 { z-index: 1; }
@@ -50,6 +50,16 @@ main {
 // this is area is for reserved class
 
 // you can include here the rest of your class name eg. home page
+
+.mt-7 {
+
+  margin-top: 70px;
+}
+
+.mb-7 {
+
+  margin-bottom: 70px;
+}
 
 .container-md {
 
@@ -97,21 +107,30 @@ ul {
     font-size: rem(22px);
   }
 
+  &:hover {
+
+    color: $green !important;
+  }
+
 }
 
 .btn-block {
 
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
   background: $dgreen;
   color: $white;
   text-transform: uppercase;
   text-align: center;
+  height: 100px;
 
   &:hover {
 
     background: darken($dgreen, 5%);
-    color: $white;
+    color: $green;
   }
 }
 
@@ -155,9 +174,24 @@ ul {
   }
 }
 
+.col-content-sm {
+
+  max-width: 500px;
+}
+
 .col-content-md {
 
   max-width: 700px;
+}
+
+.col-content-md-lg {
+
+  max-width: 700px;
+
+  @include media-breakpoint-down(lg) {
+
+    max-width: 100%;
+  }
 }
 
 .col-content-right {

@@ -25,7 +25,7 @@
 
     &::placeholder {
 
-      color: darken($white, 5%);
+      color: rgba($white, 0.6);
     }
   }
 
@@ -41,5 +41,6 @@
     font-size: rem(16px);
     color: $white;
     border: none;
+
   }
 }

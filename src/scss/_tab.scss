@@ -73,8 +73,14 @@
 .tab-panel {
 
     .filters {
-    
-        display: none;
+
+      display: none;
     }
+}
+
+.filters {
+
+  transition: visibility 0.3s, opacity 0.3s linear;
+  
 }
   

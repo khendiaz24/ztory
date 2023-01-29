@@ -33,7 +33,12 @@ var ui_tabs_filter = (function(document) {
 
 						filters.forEach(function(filter){
 
-							filter.style.display = 'block';
+							filter.style.visibility = 'visible';
+							filter.style.opacity = '1';
+
+							setTimeout(function(){
+								filter.style.display = 'block';
+							},500);
 						});
 
 					} else {
@@ -42,12 +47,22 @@ var ui_tabs_filter = (function(document) {
 
 						filters.forEach(function(filter){
 
-							filter.style.display = 'none';
+							filter.style.visibility = 'hidden';
+							filter.style.opacity = '0';
+
+							setTimeout(function(){
+								filter.style.display = 'none';
+							},500);
 						});
 
 						newTargets.forEach(function(newTarget){
 
-							newTarget.style.display = 'block';
+							newTarget.style.visibility = 'visible';
+							newTarget.style.opacity = '1';
+
+							setTimeout(function(){
+								newTarget.style.display = 'block';
+							},500);
 						});
 						
 					}

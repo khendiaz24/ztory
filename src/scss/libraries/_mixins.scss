@@ -21,7 +21,7 @@
           transition-delay: $args;
 }
 // example use
-//.class-name { @include transition(all 0.5s ease); }
+//.class-name { @include transition-delay(1s); }
 
 
 // for css3 transform

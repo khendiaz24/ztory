@@ -11,7 +11,7 @@
   top: 45px;
   left: -19px;
   width: 270px;
-  background: $gold;
+  background: $white;
   z-index: 3;
   padding-left: 0;
   box-shadow: 1px 2px 6px rgba($black, 0.1);
@@ -25,7 +25,7 @@
     
     + li {
 
-      border-top: 1px solid rgba($white, 0.5);
+      border-top: 1px solid rgba($black, 0.1);
     }
 
     a {
@@ -33,12 +33,12 @@
       margin: 0 !important;
       display: block;
       padding: 12px 20px !important;
-      color: $white !important;
+      color: $black !important;
       border: none;
 
       &:hover {
 
-        background: darken($gold, 10%);
+        background: $green;
       }
     }
   }

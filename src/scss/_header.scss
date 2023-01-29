@@ -116,6 +116,12 @@ header {
 			align-items: center;
 			padding-top: 20px;
 			padding-bottom: 20px;
+
+			@include media-breakpoint-down(lg) {
+
+				padding-top: 15px;
+				padding-bottom: 15px;
+			}
 		}
 
 		.header-right {
@@ -137,14 +143,33 @@ header {
 
 				a {
 
+					position: relative;
 					display: block;
 					margin-left: 20px;
 					text-transform: uppercase;
 					color: $white;
+					
+					&:after {
 
-					&:hover {
+						position: absolute;
+						left: 0;
+						bottom: -2px;
+						width: 100%;
+						height: 1px;
+						content: '';
+						border-bottom: 1px solid $green;
+						@include transform(scale(0));
+						@include transition(all 0.3s ease);
+						@include transform-origin(left center);
+					}
 
-						color: $gold;
+					&:hover,
+					&.active {
+
+						&::after {
+
+							@include transform(scale(1));
+						}
 					}
 				}
 			}
