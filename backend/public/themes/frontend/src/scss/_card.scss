@@ -1,0 +1,58 @@
+.card-big {
+
+    font-size: rem(16px);
+    padding: 40px;
+    background: $dwhite;
+
+    @include media-breakpoint-down(lg) {
+
+        padding: 25px;
+    }
+}
+
+.cards {
+
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+
+    &.card-right {
+
+        margin-left: auto;
+    }
+
+}
+
+.card {
+
+    border: none;
+    border-radius: 0;
+
+    &.card-lg {
+
+        h4 {
+
+            font-size: rem(38px);
+        }
+    }
+
+    &.card-bg {
+
+        .card-body {
+
+            padding: 20px;
+            background: $lgreen;
+        }
+    }
+
+    .card-body {
+
+        padding: 20px 0 0;
+
+
+        h4 {
+
+            margin-bottom: 10px;
+        }
+    }
+}
