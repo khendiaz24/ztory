@@ -34,7 +34,7 @@
                     <div class="container">
                          <div class="logo">
                               <a href="<?= base_url($lang.'/home'); ?>">
-                                   <img src="<?= base_url(); ?>/public/themes/frontend/dist/images/page_template/logo.png" width="122" height="31" alt="">
+                                   <img src="<?= base_url(); ?>/public/themes/frontend/dist/images/page_template/logo_white.svg" width="122" height="31" alt="">
                               </a>
                          </div>
                          <div class="header-right">

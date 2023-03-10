@@ -32,14 +32,25 @@ var ui_slider = (function(document) {
 					loop: myloop,
 					centeredSlides: center,
 					autoHeight: true,
-					autoplay: {
-						delay: delay,
-						disableOnInteraction: true,
-					},
+					// autoplay: {
+					// 	delay: delay,
+					// 	disableOnInteraction: true,
+					// },
 					pagination: {
 						el: pagination,
 						type: "fraction",
 						clickable: true,
+						formatFractionCurrent: function (number) {
+							return ('0' + number).slice(-2);
+						},
+						formatFractionTotal: function (number) {
+								return ('0' + number).slice(-2);
+						},
+						renderFraction: function (currentClass, totalClass) {
+								return '<span class="' + currentClass + '"></span>' +
+											' / ' +
+											'<span class="' + totalClass + '"></span>';
+						}
 					},
 					navigation: {
 						nextEl: next,

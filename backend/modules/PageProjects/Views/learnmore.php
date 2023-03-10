@@ -19,7 +19,7 @@
                <div class="row">
                     <div class="col-lg-8">
                          <div class="col-content col-content-md">
-                              <h2><?= $getProjectData['lm_title'.cnvrtlng($lang)]; ?></h2>
+                              <h2 class="green-text"><?= $getProjectData['lm_title'.cnvrtlng($lang)]; ?></h2>
                               <p class="lead"><?= $getProjectData['lm_full_details'.cnvrtlng($lang)]; ?></p>
                          </div>
                     </div>

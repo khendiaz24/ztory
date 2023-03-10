@@ -38,8 +38,10 @@
                         <a href="<?= base_url($lang.'/project/'.$rowP['url']); ?>">
                             <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowP['banner']); ?>" alt="">
                             <div class="gird-caption">
-                                <span><?= $rowP['title'.cnvrtlng($lang)] ?></span>
-                                <!-- <span>Visual Identity for <br>Hong Kong Design Centre</span> -->
+                                <div class="grid-inner">
+                                    <span><?= $rowP['title'.cnvrtlng($lang)] ?></span>
+                                    <h5><?= $rowP['client'.cnvrtlng($lang)] ?></h5>
+                                </div>
                             </div>
                         </a>
                     </div>

@@ -159,7 +159,7 @@ header {
 						content: '';
 						border-bottom: 1px solid $green;
 						@include transform(scale(0));
-						@include transition(all 0.3s ease);
+						@include transition(all 0.7s cubic-bezier(0.22, 0.61, 0.36, 1));
 						@include transform-origin(left center);
 					}
 

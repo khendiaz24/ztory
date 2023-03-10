@@ -33,7 +33,10 @@
                         <div class="grid-img">
                             <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowP['banner']); ?>" alt="">
                             <div class="gird-caption">
-                                <span>Visual Identity for <br>Hong Kong Design Centre</span>
+                                <div class="grid-inner">
+                                    <span><?= $rowP['title'.cnvrtlng($lang)] ?></span>
+                                    <h5><?= $rowP['client'.cnvrtlng($lang)] ?></h5>
+                                </div>
                             </div>
                         </div>
                     </a>
@@ -66,7 +69,7 @@
                             <?php $FBCtrli = 0; ?>
                             <?php foreach ($getFeaturedBrandtellerData as $rowFB): ?>
                                 <li>
-                                    <a href="tab<?= $FBCtrli; ?>" class="active" data-toggle="filter"><?= $FBCtrli + 1; ?></a>
+                                    <a href="tab<?= $FBCtrli; ?>" class="<?= ($FBCtrli == 0) ? 'active' :''; ?>" data-toggle="filter"><?= $FBCtrli + 1; ?></a>
                                 </li>
                                 <?php $FBCtrli++; ?>
                             <?php endforeach; ?>
@@ -76,7 +79,7 @@
                     <div class="tab-panel mt-5">
                         <?php $FBCtr = 0; ?>
                         <?php foreach ($getFeaturedBrandtellerData as $rowFB): ?>
-                            <div class="filters tab<?= $FBCtr; ?>" style="display:block">
+                            <div class="filters tab<?= $FBCtr; ?>" style="<?= ($FBCtr == 0) ? 'display:block' :''; ?>">
                                 <div class="card-big">
                                     <h3><?= $brandtellerDataLists[$rowFB['brandteller_id']]['name']; ?></h3>
                                     <p><?= $brandtellerDataLists[$rowFB['brandteller_id']]['details']; ?></p>

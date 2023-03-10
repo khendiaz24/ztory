@@ -16,6 +16,7 @@ use \Modules\AdminProjects\Models\ProjectLMModel;
 use \Modules\AdminProjects\Models\ProjectMDModel;
 use \Modules\AdminProjects\Models\ProjectTOBVModel;
 use \Modules\AdminProjects\Models\ProjectTTEventsModel;
+use \Modules\AdminProjects\Models\ProjectCreditsModel;
 use \Modules\AdminProjects\Models\DataProjectCategoriesModel;
 use \Modules\AdminProjects\Models\ProjectHeaderModel;
 
@@ -49,7 +50,7 @@ class Pageprojects extends \CodeIgniter\Controller
         $getAllProjectCategories = $dataProjectCategoriesMode->findAll();
 
         $projectsModel = new ProjectsModel();
-        $getAllProjects = $projectsModel->where('status !=', '2')->findAll();
+        $getAllProjects = $projectsModel->where('status', '1')->findAll();
 
         $projectHeaderModel = new ProjectHeaderModel();
         $getProjectHeaderData = $projectHeaderModel->first();
@@ -93,6 +94,9 @@ class Pageprojects extends \CodeIgniter\Controller
         $projectTTEventsModel = new ProjectTTEventsModel();
         $getEventImagesData = $projectTTEventsModel->where('project_id', $getProjectData['id'])->orderBy('sequence')->findAll();
 
+        $projectCreditsModel = new ProjectCreditsModel();
+        $getCreditsData = $projectCreditsModel->where('project_id', $getProjectData['id'])->orderBy('sequence')->findAll();
+
         $data['lang'] = $lang;
         $data['added_nav_class'] = "transparent";
         $data['page_title'] = $getProjectData['title'.cnvrtlng($lang)].' - Project';
@@ -107,6 +111,7 @@ class Pageprojects extends \CodeIgniter\Controller
         $data['getBVData'] = $getBVData;
         $data['getMDData'] = $getMDData;
         $data['getEventImagesData'] = $getEventImagesData;
+        $data['getCreditsData'] = $getCreditsData;
 
         return view('Modules\PageProjects\Views\details', $data);
     }

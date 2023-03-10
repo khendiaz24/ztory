@@ -78,11 +78,12 @@ ul {
 
 .btn-link {
 
+  font-weight: 600;
   display: inline-block;
   position: relative;
   padding-bottom: 3px;
   text-decoration: none;
-  color: $dgreen;
+  color: $dgreen !important;
   background: none;
 
   &::after {
@@ -99,7 +100,7 @@ ul {
 
   &.white {
 
-    color: $white;
+    color: $white Im !important;
   }
 
   &.big {
@@ -116,6 +117,7 @@ ul {
 
 .btn-block {
 
+  font-weight: 600;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -165,12 +167,23 @@ ul {
   background: $gray;
 }
 
+.green-text {
+  color: $dgreen;
+}
 
 .col-content {
 
   a {
 
     color: $black;
+  }
+
+  .lead {
+
+    span {
+
+      font-weight: 500;
+    }
   }
 }
 
@@ -182,6 +195,17 @@ ul {
 .col-content-md {
 
   max-width: 700px;
+
+  &.ms-auto {
+
+    @include media-breakpoint-down(md) {
+
+      .lead-big {
+
+        padding-bottom: 20px;
+      }
+    }
+  }
 }
 
 .col-content-md-lg {
@@ -215,6 +239,11 @@ ul {
     border: 0 !important;
     border-bottom: 1px solid lighten($gray, 10%) !important;
   }
+}
+
+.authors-list {
+
+  font-weight: 300;
 }
 
 .title-border-sm {

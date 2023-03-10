@@ -16,23 +16,23 @@
     left: 0;
     width: 100%;
     height: 100%;
-    justify-content: center;
   }
 
   h4 {
 
     font-size: 1vw;
+    height: 76px;
     padding: 15px;
     margin-bottom: 0;
     color: $green;
     margin-top: 0;
+    max-width: 50%;
   }
 
   ul {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     flex-grow: 1;
     padding: 20px 50px;
   }
@@ -41,16 +41,39 @@
 
     list-style: disc;
     margin-left: 20px;
-    margin-bottom: 5px;
-    font-size: 1vw;
+    font-size: 0.98vw;
+
+    span {
+
+      color: $white !important;
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+
+    h4 {
+
+      height: 58px;
+    }
+
+    ul {
+
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
   }
 
   @include media-breakpoint-down(lg) {
 
+    h4 {
+
+      height: 58px;
+    }
+
     h4,
     li {
 
-      font-size: 1.4vw;
+      font-size: 1.3vw;
     }
 
     ul {
@@ -65,12 +88,17 @@
     h4,
     li {
 
-      font-size: 2.2vw;
+      font-size: 2vw;
     }
 
   }
 
-  @include media-breakpoint-down(sm) {    
+  @include media-breakpoint-down(sm) {
+    
+    h4 {
+
+      height: auto;
+    }
 
     h4,
     li {
