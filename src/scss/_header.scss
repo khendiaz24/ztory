@@ -217,7 +217,14 @@ header {
 			
 			display: none;
 			cursor: pointer;
-			font-size: rem(22px);
+			font-size: rem(28px);
+			line-height: 0;
+
+			i {
+
+				height: 19px;
+				overflow: hidden;
+			}
 
 			@include media-breakpoint-down(lg) {
 

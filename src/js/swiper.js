@@ -13,6 +13,7 @@ var ui_slider = (function(document) {
 				var center = swipe.getAttribute('data-center');
 				var perview = swipe.getAttribute('data-perview');
 				var loop = swipe.getAttribute('data-loop');
+				var gap = swipe.getAttribute('data-gap');
 				var perviewSm = swipe.getAttribute('data-sm-perview');
 				var perviewMd = swipe.getAttribute('data-md-perview');
 				var perviewLg = swipe.getAttribute('data-lg-perview');
@@ -24,10 +25,11 @@ var ui_slider = (function(document) {
 
 				var myloop = Boolean(loop);
 				var mycenter = (center);
+				var mygap = parseFloat(gap);
 
 				swipe = new Swiper(swipe, {
-					spaceBetween: 20,
-					slidesPerView: 1,
+					spaceBetween: mygap,
+					slidesPerView: perviewSm,
 					effect: effect,
 					loop: myloop,
 					centeredSlides: center,
@@ -64,7 +66,7 @@ var ui_slider = (function(document) {
 							slidesPerView: perviewMd,
 
 						},
-						1024: {
+						992: {
 							slidesPerView: perviewLg,
 						},
 					},

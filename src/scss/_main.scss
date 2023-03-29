@@ -32,6 +32,8 @@ main {
 .container {
 
   max-width: 1504px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .zx1 { z-index: 1; }
@@ -133,6 +135,11 @@ ul {
 
     background: darken($dgreen, 5%);
     color: $green;
+  }
+
+  @include media-breakpoint-down(lg) {
+
+    height: 55px;
   }
 }
 

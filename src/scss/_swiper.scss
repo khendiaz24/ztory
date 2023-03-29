@@ -6,6 +6,21 @@
 
     height: auto;
   }
+
+  &.swiper-holder-folder {
+
+    padding-right: 24px;
+  
+    @include media-breakpoint-down(lg) {
+  
+      padding-right: 0;
+
+      .swiper-slide {
+  
+        width: 300px;
+      }
+    }
+  }
 }
 
 
@@ -64,10 +79,15 @@
   top: -35px;
   left: 50%;
   max-width: 1300px;
-  padding-left: 15px;
-  padding-right: 15px;
-  width: calc(100% - 30px);
+  padding-left: 24px;
+  padding-right: 24px;
+  width: calc(100% - 48px);
   @include transform(translateX(-50%));
+
+  @include media-breakpoint-down(md) {
+
+    top: 0;
+  }
 }
 
 

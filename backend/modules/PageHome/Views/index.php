@@ -58,8 +58,13 @@
                     <div class="col-content">
                         <p class="lead"><?= $getHomeContentData['bt_header'.cnvrtlng($lang)]; ?></p>
                         <a href="<?= base_url($lang.'/brandteller'); ?>" class="btn-link mt-4"><?= displaylanguage($lang, 'SEE ALL CASE STUDIES', 'SEE ALL CASE STUDIES', 'SEE ALL CASE STUDIES'); ?></a>
-                        <div class="col-graphics mt-7">
-                            <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/home/'.$getHomeContentData['bt_image']); ?>" alt="">
+                        <div class="tab-panel mt-7 d-none d-md-block">
+                            <div class="col-graphics filters tab0" style="display:block;">
+                                <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/home/'.$getHomeContentData['bt_image']); ?>" alt="">
+                            </div>
+                            <div class="col-graphics filters tab1">
+                                <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/home/'.$getHomeContentData['bt_image']); ?>" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -69,14 +74,14 @@
                             <?php $FBCtrli = 0; ?>
                             <?php foreach ($getFeaturedBrandtellerData as $rowFB): ?>
                                 <li>
-                                    <a href="tab<?= $FBCtrli; ?>" class="<?= ($FBCtrli == 0) ? 'active' :''; ?>" data-toggle="filter"><?= $FBCtrli + 1; ?></a>
+                                    <a href="tab<?= $FBCtrli; ?>" class="<?= ($FBCtrli == 0) ? 'active' :''; ?>" data-toggle="filter">0<?= $FBCtrli + 1; ?></a>
                                 </li>
                                 <?php $FBCtrli++; ?>
                             <?php endforeach; ?>
                         </ul>
                     </nav>
 
-                    <div class="tab-panel mt-5">
+                    <div class="tab-panel mt-4 mt-md-5">
                         <?php $FBCtr = 0; ?>
                         <?php foreach ($getFeaturedBrandtellerData as $rowFB): ?>
                             <div class="filters tab<?= $FBCtr; ?>" style="<?= ($FBCtr == 0) ? 'display:block' :''; ?>">
@@ -87,6 +92,15 @@
                             </div>
                             <?php $FBCtr++; ?>
                         <?php endforeach; ?>
+                    </div>
+
+                    <div class="tab-panel mt-3 d-block d-md-none">
+                        <div class="col-graphics filters tab0" style="display:block;">
+                            <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/home/'.$getHomeContentData['bt_image']); ?>" alt="">
+                        </div>
+                        <div class="col-graphics filters tab1">
+                            <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/home/'.$getHomeContentData['bt_image']); ?>" alt="">
+                        </div>
                     </div>
 
                 </div>

@@ -28,7 +28,7 @@
                 </div>
             </div>
 
-            <div class="row gx-lg-0 mt-10">
+            <div class="row gy-5 gx-lg-0 mt-10">
                 <!-- Content -->
                 <div class="col-lg-6">
                     <article class="article-sm">
@@ -42,21 +42,25 @@
 
                 <!-- Tags -->
                 <div class="col-lg-6">
-                    <div class="cards card-right">
-
+                    <div class="card-right">
                         <h4><?= displaylanguage($lang, 'The Latest Brandteller TC', 'The Latest Brandteller SC', 'The Latest Brandteller'); ?></h4>
-                        <?php foreach ($getTagsByBrandtellerID as $rowT): ?>
-                            <div class="card card-bg">
-                                <div class="card-img">
-                                    <img class="img-objectfit lazyload" src="<?= base_url('public/assets/uploads/brandteller/'.$rowT['image']); ?>" alt="">
-                                </div>
-                                <div class="card-body">
-                                    <h4><?= $rowT['name'.cnvrtlng($lang)]; ?></h4>
-                                    <span class="badge mt-3"><?= $brand_categories[$rowT['category_id']]; ?></span>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
 
+                        <div class="cards">
+                            <?php foreach ($getLatestBrandtellersData as $rowT): ?>
+                                <div class="card card-bg">
+                                    <div class="card-img">
+                                        <a href="<?= base_url($lang.'/brandteller/'.$rowT['url']); ?>">
+                                            <img class="img-objectfit lazyload" src="<?= base_url('public/assets/uploads/brandteller/'.$rowT['small_image']); ?>" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4><?= $rowT['name'.cnvrtlng($lang)]; ?></h4>
+                                        <span class="badge mt-3"><?= $brand_categories[$rowT['category_id']]; ?></span>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+    
+                        </div>
                     </div>
                 </div>
             </div>

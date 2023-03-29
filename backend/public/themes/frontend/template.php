@@ -34,7 +34,7 @@
                     <div class="container">
                          <div class="logo">
                               <a href="<?= base_url($lang.'/home'); ?>">
-                                   <img src="<?= base_url(); ?>/public/themes/frontend/dist/images/page_template/logo_white.svg" width="122" height="31" alt="">
+                                   <img src="<?= base_url(); ?>/public/assets/uploads/contactus/<?= $footer_content['nav_logo'] ?>" width="122" height="31" alt="">
                               </a>
                          </div>
                          <div class="header-right">
@@ -94,7 +94,7 @@
                               <div class="footer-left">
                                    <a href="mailto:<?= $contactus_content['con_email']; ?>"><?= $contactus_content['con_email']; ?></a>
                                    <a href="tel:<?= $contactus_content['con_number']; ?>"><?= $contactus_content['con_number']; ?></a>
-                                   <span><?= $footer_content['copyrights'.cnvrtlng($lang)]; ?></span>
+                                   <span class="d-none d-md-block"><?= $footer_content['copyrights'.cnvrtlng($lang)]; ?></span>
                               </div>
                               <div class="footer-right">
                                    <a href="<?= $footer_content['soc_wa'] ?>" class="footer-icon">
@@ -108,6 +108,8 @@
                                         <a href="<?= $footer_content['soc_vm'] ?>"><i class="fab fa-vimeo-v"></i></a>
                                         <a href="<?= $footer_content['soc_pin'] ?>"><i class="fab fa-pinterest"></i></a>
                                    </div>
+
+                                   <span class="d-block d-md-none mt-4"><?= $footer_content['copyrights'.cnvrtlng($lang)]; ?></span>
                               </div>
                          </div>
                     </div>
@@ -120,7 +122,7 @@
      <div class="mobile-menu" id="mobile-menu">
           <div class="menu-container">
                <div class="mobile-menu-header">
-                    <img class="img-fluid lazyload" src="<?= base_url(); ?>/public/themes/frontend/dist/images/page_template/logo.png" alt="">
+                    <img class="img-fluid lazyload" src="<?= base_url(); ?>/public/assets/uploads/contactus/<?= $footer_content['nav_logo'] ?>" alt="">
                     <button class="menu-close" data-toggle="close" aria-controls="mobile-menu"><i class="fal fa-times"></i></button>
                </div>
                <div class="menu-holder mt-4">

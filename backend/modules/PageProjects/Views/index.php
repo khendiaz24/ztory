@@ -38,10 +38,7 @@
                         <a href="<?= base_url($lang.'/project/'.$rowP['url']); ?>">
                             <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowP['banner']); ?>" alt="">
                             <div class="gird-caption">
-                                <div class="grid-inner">
-                                    <span><?= $rowP['title'.cnvrtlng($lang)] ?></span>
-                                    <h5><?= $rowP['client'.cnvrtlng($lang)] ?></h5>
-                                </div>
+                                <span><?= $rowP['title'.cnvrtlng($lang)] ?> <br><?= $rowP['client'.cnvrtlng($lang)] ?></span>
                             </div>
                         </a>
                     </div>
