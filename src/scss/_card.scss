@@ -16,17 +16,17 @@
 
             .card {
 
-                flex-basis: calc(25% - 15px);
+                flex-basis: calc(50% - 15px);
                 margin-left: 15px;
                 margin-bottom: 15px;
 
                 .card-img {
                     
-                    height: 145px;
+                    height: 160px;
 
                     img {
 
-                        height: 145px;
+                        height: 160px;
                     }
                 }
             }
@@ -70,6 +70,7 @@
 
 .card-big {
 
+    position: relative;
     font-size: rem(16px);
     padding: 40px;
     background: $dwhite;

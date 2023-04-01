@@ -38,7 +38,11 @@
                         <a href="<?= base_url($lang.'/project/'.$rowP['url']); ?>">
                             <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowP['banner']); ?>" alt="">
                             <div class="gird-caption">
-                                <span><?= $rowP['title'.cnvrtlng($lang)] ?> <br><?= $rowP['client'.cnvrtlng($lang)] ?></span>
+                                <div class="grid-img">
+                                    <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowP['banner']); ?>" alt="">
+                                    <div class="gird-caption">
+                                    </div>
+                                </div>
                             </div>
                         </a>
                     </div>

@@ -59,12 +59,13 @@
                         <p class="lead"><?= $getHomeContentData['bt_header'.cnvrtlng($lang)]; ?></p>
                         <a href="<?= base_url($lang.'/brandteller'); ?>" class="btn-link mt-4"><?= displaylanguage($lang, 'SEE ALL CASE STUDIES', 'SEE ALL CASE STUDIES', 'SEE ALL CASE STUDIES'); ?></a>
                         <div class="tab-panel mt-7 d-none d-md-block">
-                            <div class="col-graphics filters tab0" style="display:block;">
-                                <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/home/'.$getHomeContentData['bt_image']); ?>" alt="">
-                            </div>
-                            <div class="col-graphics filters tab1">
-                                <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/home/'.$getHomeContentData['bt_image']); ?>" alt="">
-                            </div>
+                            <?php $FBCtrlS = 0; ?>
+                            <?php foreach ($getFeaturedBrandtellerData as $rowFB): ?>
+                                <div class="col-graphics filters tab<?= $FBCtrlS; ?>" style="<?= ($FBCtrlS == 0) ? 'display:block;' :''; ?>">
+                                    <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/brandteller/'.$brandtellerDataLists[$rowFB['brandteller_id']]['big_image']); ?>" alt="">
+                                </div>
+                                <?php $FBCtrlS++; ?>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -86,6 +87,7 @@
                         <?php foreach ($getFeaturedBrandtellerData as $rowFB): ?>
                             <div class="filters tab<?= $FBCtr; ?>" style="<?= ($FBCtr == 0) ? 'display:block' :''; ?>">
                                 <div class="card-big">
+                                    <a href="#" class="stretched-link"></a>
                                     <h3><?= $brandtellerDataLists[$rowFB['brandteller_id']]['name']; ?></h3>
                                     <p><?= $brandtellerDataLists[$rowFB['brandteller_id']]['details']; ?></p>
                                 </div>

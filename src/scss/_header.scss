@@ -22,6 +22,16 @@ header {
 			}
 		}
 
+		.dark-logo {
+
+			display: none;
+		}
+
+		.light-logo {
+
+			display: block;
+		}
+
 		&.dark {
 
 			color: $black;
@@ -29,6 +39,11 @@ header {
 			.light-logo {
 
 				display: none;
+			}
+
+			.dark-logo {
+
+				display: block;
 			}
 
 			.menu {

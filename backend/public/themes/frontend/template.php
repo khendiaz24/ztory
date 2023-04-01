@@ -21,7 +21,7 @@
      <!-- Favicons -->
      <link rel="shortcut icon" href="<?= base_url(); ?>/public/themes/frontend/dist/images/favicon/favicon.ico">
      <link rel="apple-touch-icon" href="<?= base_url(); ?>/public/themes/frontend/dist/images/favicon/apple-touch-icon.png">
-     <link rel="icon" href="<?= base_url(); ?>/public/themes/frontend/dist/images/favicon/android-touch-icon.png">
+     <link rel="icon" href="<?= base_url(); ?>/public/themes/frontend/dist/images/favicon/windows-tile-icon.png">
 
      <script> var BASE_URL = '<?= base_url(); ?>'; </script>
 
@@ -34,7 +34,8 @@
                     <div class="container">
                          <div class="logo">
                               <a href="<?= base_url($lang.'/home'); ?>">
-                                   <img src="<?= base_url(); ?>/public/assets/uploads/contactus/<?= $footer_content['nav_logo'] ?>" width="122" height="31" alt="">
+                                   <img class="light-logo" src="<?= base_url(); ?>/public/themes/frontend/dist/images/page_template/logo_white.svg" width="122" height="31" alt="">
+                                   <img class="dark-logo" src="<?= base_url(); ?>/public/themes/frontend/dist/images/page_template/logo_black.svg" width="122" height="31" alt="">
                               </a>
                          </div>
                          <div class="header-right">

@@ -44,8 +44,8 @@
                 <div class="col-lg-6">
                     <div class="card-right">
                         <h4><?= displaylanguage($lang, 'The Latest Brandteller TC', 'The Latest Brandteller SC', 'The Latest Brandteller'); ?></h4>
-
                         <div class="cards">
+    
                             <?php foreach ($getLatestBrandtellersData as $rowT): ?>
                                 <div class="card card-bg">
                                     <div class="card-img">
