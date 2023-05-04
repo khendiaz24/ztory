@@ -89,7 +89,7 @@
         <div class="container">
             <?php if (!empty($getProjectData['lm_image']) && count($getLMImagesData) > 0 && in_array('2', $customTabs)): ?>
                 <!-- Learn More -->
-                <div class="row gx-lg-5 gy-5 align-items-center">
+                <div class="row gx-lg-5 gy-5 pb-5 mb-7 align-items-center">
                     <div class="col-md-6">
                         <div class="col-graphics">
                             <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/projects/'.$getProjectData['lm_image']); ?>" alt="">
@@ -109,7 +109,7 @@
 
             <?php if (!empty($getProjectData['ba_details']) && count($getBAData) > 0): ?>
                 <!-- Project Details -->
-                <div class="row gx-lg-5 pt-5 mt-7 mb-5">
+                <div class="row gx-lg-5 mb-5">
                     <div class="col-md-6">
                         <div class="col-content">
                             <h3><?= $getProjectData['ba_header'.cnvrtlng($lang)]; ?></h3>

@@ -51,7 +51,7 @@
         </div>
 
         <div class="form-btn">
-            <a href="" class="btn-block">See all projects</a>
+            <a href="" class="btn-block"><?= displaylanguage($lang, '查看所有項目', '查看所有项目', 'See all projects'); ?></a>
         </div>
     </div>
 
