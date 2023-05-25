@@ -1,5 +1,6 @@
 // ionclude all your related style here in the header, you can leave it empty if the page has no header
 html, body { height:100%; min-height:100%; font-size: rem(15px); }
+
 header {
 	
 	.header {
@@ -30,6 +31,11 @@ header {
 		.light-logo {
 
 			display: block;
+		}
+
+		.green-logo {
+
+			display: none;
 		}
 
 		&.dark {
@@ -67,18 +73,40 @@ header {
 				}
 			}
 
+			.logo {
+
+				&:hover {
+	
+					.light-logo,
+					.dark-logo {
+	
+						display: none;
+					}
+	
+					.green-logo {
+	
+						display: block;
+					}
+				}
+			}
+
 			&.scrolled {
 
 				color: $white;
 
 				.light-logo {
 
-					display: block;
+					display: block !important;
 				}
 
 				.dark-logo {
 
 					display: none;
+				}
+
+				.green-logo {
+	
+					display: none !important;
 				}
 
 				.menu {

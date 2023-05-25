@@ -10,6 +10,8 @@
      <meta name="msapplication-TileImage" content="img/favicon/windows-tile-icon.png">
      <meta name="msapplication-TileColor" content="#86BF40">
 
+     <link rel="preload" href="<?= base_url(); ?>/public/themes/frontend/dist/images/page_template/loading_logo.png" as="image">
+
      <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="<?= base_url(); ?>/public/themes/frontend/dist/css/base.css" media="all"/>
 
@@ -36,27 +38,28 @@
                               <a href="<?= base_url($lang.'/home'); ?>">
                                    <img class="light-logo" src="<?= base_url(); ?>/public/themes/frontend/dist/images/page_template/logo_white.svg" width="122" height="31" alt="">
                                    <img class="dark-logo" src="<?= base_url(); ?>/public/themes/frontend/dist/images/page_template/logo_black.svg" width="122" height="31" alt="">
+                                   <img class="green-logo" src="<?= base_url(); ?>/public/themes/frontend/dist/images/page_template/logo_green.svg" width="122" height="31" alt="">
                               </a>
                          </div>
                          <div class="header-right">
                               <nav class="menu">
                                    <ul>
                                         <li>
-                                             <a href="<?= base_url($lang.'/projects'); ?>"><?= displaylanguage($lang, 'Projects TC', 'Projects SC', 'Projects'); ?></a>
+                                             <a href="<?= base_url($lang.'/projects'); ?>"><?= displaylanguage($lang, '項目', '项目', 'Projects'); ?></a>
                                         </li>
                                         <li>
-                                             <a href="<?= base_url($lang.'/aboutus'); ?>"><?= displaylanguage($lang, 'About TC', 'About SC', 'About'); ?></a>
+                                             <a href="<?= base_url($lang.'/aboutus'); ?>"><?= displaylanguage($lang, '了解我們', '了解我们', 'About'); ?></a>
                                         </li>
                                         <li>
-                                             <a href="<?= base_url($lang.'/brandteller'); ?>"><?= displaylanguage($lang, 'Brandteller TC', 'Brandteller SC', 'Brandteller'); ?></a>
+                                             <a href="<?= base_url($lang.'/brandteller'); ?>"><?= displaylanguage($lang, '品牌贏家', '品牌赢家', 'Brandteller'); ?></a>
                                         </li>
                                         <li>
-                                             <a href="<?= base_url($lang.'/contactus'); ?>"><?= displaylanguage($lang, 'Contact TC', 'Contact SC', 'Contact'); ?></a>
+                                             <a href="<?= base_url($lang.'/contactus'); ?>"><?= displaylanguage($lang, '聯絡我們', '联络我们', 'Contact'); ?></a>
                                         </li>
                                    </ul>
                               </nav>
                               <div class="user">
-                                   <a href="" class="sns"><i class="fab fa-whatsapp"></i></a>
+                                   <a href="<?= $footer_content['soc_wa'] ?>" target="_blank" class="sns"><i class="fab fa-whatsapp"></i></a>
                                    <div class="lang" data-toggle="dropdown">
                                         <span><?= displaylanguage($lang, '繁', '简', 'EN'); ?> <i class="fal fa-chevron-down"></i></span>
                                         <ul class="dropdown dropdown-sm" aria-hidden="true">
@@ -98,16 +101,16 @@
                                    <span class="d-none d-md-block"><?= $footer_content['copyrights'.cnvrtlng($lang)]; ?></span>
                               </div>
                               <div class="footer-right">
-                                   <a href="<?= $footer_content['soc_wa'] ?>" class="footer-icon">
+                                   <a href="<?= $footer_content['soc_wa'] ?>" class="footer-icon" target="_blank">
                                         <i class="fab fa-whatsapp"></i>
                                         <span><?= $contactus_content['wa_text'.cnvrtlng($lang)] ?></span>
                                    </a>
                                    <div class="footer-sns">
-                                        <a href="<?= $footer_content['soc_fb'] ?>"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="<?= $footer_content['soc_ins'] ?>"><i class="fab fa-instagram"></i></a>
-                                        <a href="<?= $footer_content['soc_yt'] ?>"><i class="fab fa-youtube"></i></a>
-                                        <a href="<?= $footer_content['soc_vm'] ?>"><i class="fab fa-vimeo-v"></i></a>
-                                        <a href="<?= $footer_content['soc_pin'] ?>"><i class="fab fa-pinterest"></i></a>
+                                        <a href="<?= $footer_content['soc_fb'] ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="<?= $footer_content['soc_ins'] ?>" target="_blank"><i class="fab fa-instagram"></i></a>
+                                        <a href="<?= $footer_content['soc_yt'] ?>" target="_blank"><i class="fab fa-youtube"></i></a>
+                                        <a href="<?= $footer_content['soc_vm'] ?>" target="_blank"><i class="fab fa-vimeo-v"></i></a>
+                                        <a href="<?= $footer_content['soc_pin'] ?>" target="_blank"><i class="fab fa-pinterest"></i></a>
                                    </div>
 
                                    <span class="d-block d-md-none mt-4"><?= $footer_content['copyrights'.cnvrtlng($lang)]; ?></span>
@@ -123,22 +126,24 @@
      <div class="mobile-menu" id="mobile-menu">
           <div class="menu-container">
                <div class="mobile-menu-header">
-                    <img class="img-fluid lazyload" src="<?= base_url(); ?>/public/assets/uploads/contactus/<?= $footer_content['nav_logo'] ?>" alt="">
+                    <a href="<?= base_url($lang.'/home'); ?>">
+                         <img class="img-fluid lazyload" src="<?= base_url(); ?>/public/assets/uploads/contactus/<?= $footer_content['nav_logo'] ?>" alt="">
+                    </a>
                     <button class="menu-close" data-toggle="close" aria-controls="mobile-menu"><i class="fal fa-times"></i></button>
                </div>
                <div class="menu-holder mt-4">
                     <ul>
                          <li>
-                              <a href="<?= base_url($lang.'/projects'); ?>"><?= displaylanguage($lang, 'Projects TC', 'Projects SC', 'Projects'); ?></a>
+                              <a href="<?= base_url($lang.'/projects'); ?>"><?= displaylanguage($lang, '項目', '项目', 'Projects'); ?></a>
                          </li>
                          <li>
-                              <a href="<?= base_url($lang.'/aboutus'); ?>"><?= displaylanguage($lang, 'About TC', 'About SC', 'About'); ?></a>
+                              <a href="<?= base_url($lang.'/aboutus'); ?>"><?= displaylanguage($lang, '了解我們', '了解我们', 'About'); ?></a>
                          </li>
                          <li>
-                              <a href="<?= base_url($lang.'/brandteller'); ?>"><?= displaylanguage($lang, 'Brandteller TC', 'Brandteller SC', 'Brandteller'); ?></a>
+                              <a href="<?= base_url($lang.'/brandteller'); ?>"><?= displaylanguage($lang, '品牌贏家', '品牌赢家', 'Brandteller'); ?></a>
                          </li>
                          <li>
-                              <a href="<?= base_url($lang.'/contactus'); ?>"><?= displaylanguage($lang, 'Contact TC', 'Contact SC', 'Contact'); ?></a>
+                              <a href="<?= base_url($lang.'/contactus'); ?>"><?= displaylanguage($lang, '聯絡我們', '联络我们', 'Contact'); ?></a>
                          </li>
                     </ul>
 

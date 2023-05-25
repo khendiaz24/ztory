@@ -80,6 +80,7 @@ function scripts() {
     paths.scripts.src + '/ui-menu.js',
     paths.scripts.src + '/ui-close.js',
     paths.scripts.src + '/swiper.js',
+    paths.scripts.src + '/ui-video.js',
   ])
   .pipe(sourcemaps.init())
   .pipe(babel({

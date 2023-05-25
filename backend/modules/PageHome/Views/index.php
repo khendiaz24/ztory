@@ -31,7 +31,13 @@
                 <div class="col-sm-6">
                     <a href="<?= base_url($lang.'/project/'.$rowP['url']); ?>">
                         <div class="grid-img">
-                            <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowP['banner']); ?>" alt="">
+                            <?php
+                                $DisplayImage = $rowP['banner'];
+                                if (!empty($rowP['thumbnail'])) {
+                                    $DisplayImage = $rowP['thumbnail'];
+                                }
+                            ?>
+                            <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$DisplayImage); ?>" alt="">
                             <div class="gird-caption">
                                 <div class="grid-inner">
                                     <span><?= $rowP['title'.cnvrtlng($lang)] ?></span>
@@ -45,19 +51,19 @@
         </div>
 
         <div class="form-btn">
-            <a href="<?= base_url($lang.'/projects/'); ?>" class="btn-block"><?= displaylanguage($lang, 'See all projects', 'See all projects', 'See all projects'); ?></a>
+            <a href="<?= base_url($lang.'/projects/'); ?>" class="btn-block"><?= displaylanguage($lang, '查看所有項目', '查看所有项目', 'See all projects'); ?></a>
         </div>
     </div>
 
     <!-- Brandteller -->
     <div class="section">
         <div class="container">
-            <h2><?= displaylanguage($lang, 'Brandteller', 'Brandteller', 'Brandteller'); ?></h2>
+            <h2><?= displaylanguage($lang, '品牌贏家', '品牌赢家', 'Brandteller'); ?></h2>
             <div class="row gx-lg-5 gy-5">
                 <div class="col-md-6">
                     <div class="col-content">
                         <p class="lead"><?= $getHomeContentData['bt_header'.cnvrtlng($lang)]; ?></p>
-                        <a href="<?= base_url($lang.'/brandteller'); ?>" class="btn-link mt-4"><?= displaylanguage($lang, 'SEE ALL CASE STUDIES', 'SEE ALL CASE STUDIES', 'SEE ALL CASE STUDIES'); ?></a>
+                        <a href="<?= base_url($lang.'/brandteller'); ?>" class="btn-link mt-4"><?= displaylanguage($lang, '查看所有案例', '查看所有案例', 'SEE ALL CASE STUDIES'); ?></a>
                         <div class="tab-panel mt-7 d-none d-md-block">
                             <?php $FBCtrlS = 0; ?>
                             <?php foreach ($getFeaturedBrandtellerData as $rowFB): ?>
@@ -87,7 +93,7 @@
                         <?php foreach ($getFeaturedBrandtellerData as $rowFB): ?>
                             <div class="filters tab<?= $FBCtr; ?>" style="<?= ($FBCtr == 0) ? 'display:block' :''; ?>">
                                 <div class="card-big">
-                                    <a href="#" class="stretched-link"></a>
+                                    <a href="<?= base_url($lang.'/brandteller/'.$brandtellerDataLists[$rowFB['brandteller_id']]['url']); ?>" class="stretched-link"></a>
                                     <h3><?= $brandtellerDataLists[$rowFB['brandteller_id']]['name']; ?></h3>
                                     <p><?= $brandtellerDataLists[$rowFB['brandteller_id']]['details']; ?></p>
                                 </div>

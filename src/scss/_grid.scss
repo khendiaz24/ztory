@@ -51,18 +51,21 @@
 		}
 	}
 
-	&:hover {
+	@include media-breakpoint-up(lg) {
 
-		.gird-caption {
+		&:hover {
 
-			opacity: 1;
-
-			span {
-
-				&::after {
-
-					@include transition-delay(0.3s);
-					@include transform(scale(1));
+			.gird-caption {
+	
+				opacity: 1;
+	
+				span {
+	
+					&::after {
+	
+						@include transition-delay(0.3s);
+						@include transform(scale(1));
+					}
 				}
 			}
 		}
@@ -88,7 +91,7 @@
 
 		&.col-grid-big {
 
-			max-width: 450px;
+			max-width: 567px;
 		}
 
 		.col-circle {

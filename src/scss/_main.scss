@@ -182,6 +182,11 @@ ul {
   color: $dgreen;
 }
 
+.uppercase {
+
+  text-transform: uppercase;
+}
+
 .col-content {
 
   a {
@@ -191,10 +196,23 @@ ul {
 
   .lead {
 
+    line-height: 28px;
+
     span {
 
       font-weight: 500;
     }
+  }
+
+  h4 {
+
+    font-family: $defaultFont;
+    font-weight: 500;
+  }
+
+  li {
+
+    font-weight: 300;
   }
 }
 
@@ -206,6 +224,16 @@ ul {
 .col-content-md {
 
   max-width: 700px;
+
+
+  .lead {
+
+    .lead {
+
+      font-size: rem(22px);
+      font-weight: 500;
+    }
+  }
 
   &.ms-auto {
 
@@ -279,6 +307,7 @@ ul {
   li {
 
     margin-bottom: 5px;
+    font-weight: 300;
   }
 }
 
@@ -349,6 +378,20 @@ article {
 
     max-width: 100%;
   }
+}
+
+.contact-form {
+
+  max-width: 882px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-bottom {
+
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 

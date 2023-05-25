@@ -3,6 +3,12 @@
     max-width: 300px;
     margin-left: auto;
 
+    h4 {
+
+        font-family: $defaultFont;
+        font-weight: 500;
+    }
+
     @include media-breakpoint-down(lg) {
 
         max-width: 100%;
@@ -111,8 +117,13 @@
 
         .card-body {
 
-            padding: 20px;
+            padding: 22px 22px 35px;
             background: $lgreen;
+
+            @include media-breakpoint-down(lg) {
+
+                padding: 20px;
+            }
         }
     }
 
@@ -123,6 +134,8 @@
 
         h4 {
 
+            font-family: $montserrat;
+            font-weight: 500;
             margin-bottom: 10px;
         }
     }

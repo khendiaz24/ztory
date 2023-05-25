@@ -1,4 +1,10 @@
-<svg id="Group_16" data-name="Group 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="121.525" height="30.422" viewBox="0 0 121.525 30.422">  
+<svg id="Group_16" data-name="Group 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="121.525" height="30.422" viewBox="0 0 121.525 30.422">
+  <style>
+    #Group_16 {
+
+      fill: #005329;
+    }
+  </style>
   <defs>
     <clipPath id="clip-path">
       <rect id="Rectangle_4" data-name="Rectangle 4" width="121.525" height="30.422"/>

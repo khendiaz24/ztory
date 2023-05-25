@@ -43,6 +43,7 @@ footer {
 
 					display: flex;
 					align-items:center;
+					justify-content: flex-end;
 					vertical-align: middle;
 					font-size: rem(16px);
 					font-weight: 600;
@@ -98,6 +99,11 @@ footer {
 					.footer-sns {
 
 						margin-left: -20px;
+					}
+
+					.footer-icon {
+
+						justify-content: flex-start;
 					}
 				}
 			}

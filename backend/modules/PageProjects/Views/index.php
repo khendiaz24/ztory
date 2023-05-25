@@ -12,7 +12,7 @@
 
     <div class="section section-hero-inner ddgreen p-0">
         <div class="hero-content">
-            <div class="container">
+            <div class="container pt-5">
                 <h1><?= $getProjectHeaderData['title'.cnvrtlng($lang)]; ?></h1>
             </div>
         </div>
@@ -33,14 +33,34 @@
         </div>
         <div class="row g-0">
             <?php foreach ($getAllProjects as $rowP): ?>
-                <div class="col-sm-6 filters prdctctgry<?= $rowP['category_id']; ?>">
+                <?php
+                    $xCategories = explode("|", $rowP['category_id']);
+                    $cCategories = "";
+                    foreach ($xCategories as $key => $value)
+                    {
+                        if (!empty($value))
+                        {
+                            $cCategories .= "prdctctgry".$value." ";
+                        }
+                    }
+                ?>
+                <div class="col-sm-6 filters <?= $cCategories; ?>">
+                    <?php
+                        $DisplayImage = $rowP['banner'];
+                        if (!empty($rowP['thumbnail'])) {
+                            $DisplayImage = $rowP['thumbnail'];
+                        }
+                    ?>
                     <div class="grid-img">
                         <a href="<?= base_url($lang.'/project/'.$rowP['url']); ?>">
-                            <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowP['banner']); ?>" alt="">
+                            <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$DisplayImage); ?>" alt="">
                             <div class="gird-caption">
                                 <div class="grid-img">
-                                    <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowP['banner']); ?>" alt="">
+                                    <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$DisplayImage); ?>" alt="">
                                     <div class="gird-caption">
+                                        <div class="grid-inner">
+                                            <span><h5><?= $rowP['client'.cnvrtlng($lang)] ?></h5></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +70,7 @@
             <?php endforeach; ?>
         </div>
 
-        <div class="form-btn">
+        <div class="form-btn" style="display: none">
             <a href="" class="btn-block"><?= displaylanguage($lang, '查看所有項目', '查看所有项目', 'See all projects'); ?></a>
         </div>
     </div>

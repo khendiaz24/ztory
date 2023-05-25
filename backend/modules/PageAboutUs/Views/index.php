@@ -23,13 +23,13 @@
         <div class="section-inner container">
             <div class="container-sm text-center">
                 <h2 class="mb-5 pb-5"><?= $getAboutUsData['description'.cnvrtlng($lang)]; ?></h2>
-                <span class="text-green lead-big"><?= displaylanguage($lang, 'To Know What We Do and How We Do It - TC', 'To Know What We Do and How We Do It - SC', 'To Know What We Do and How We Do It'); ?></span>
+                <span class="text-green lead-big"><?= displaylanguage($lang, '了解我們如何塑造受人喜愛的品牌', '了解我们如何塑造受人喜爱的品牌', 'To Know What We Do and How We Do It'); ?></span>
             </div>
         </div>
 
         <!-- OBB -->
         <div class="section-inner container">
-            <h3><em>01</em><?= displaylanguage($lang, 'Our Branding Blueprint TC', 'Our Branding Blueprint SC', 'Our Branding Blueprint'); ?></h3>
+            <h3><em>01</em><?= displaylanguage($lang, '我們的品牌藍圖', '我们的品牌蓝图', 'Our Branding Blueprint'); ?></h3>
             <div class="row grid2 gy-4 justify-content-center mt-5">
                 <?php foreach ($getAllOBBData as $rowOBB): ?>
                     <div class="col-sm-6 col-md-4 col-lg">
@@ -46,7 +46,7 @@
         <div class="section-inner container">
             <div class="row gy-4">
                 <div class="col-lg-5">
-                    <h3><em>02</em> <?= displaylanguage($lang, 'Our Brand Philosophy TC', 'Our Brand Philosophy SC', 'Our Brand Philosophy'); ?></h3>
+                    <h3><em>02</em> <?= displaylanguage($lang, '我們的品牌哲學', '我们的品牌哲学', 'Our Brand Philosophy'); ?></h3>
                 </div>
                 <div class="col-lg-7">
                     <div class="col-content">
@@ -58,7 +58,7 @@
 
         <!-- OC -->
         <div class="section-inner container">
-            <h3><em>03</em> <?= displaylanguage($lang, 'Our Concept TC', 'Our Concept SC', 'Our Concept'); ?></h3>
+            <h3><em>03</em> <?= displaylanguage($lang, '我們的概念', '我们的概念', 'Our Concept'); ?></h3>
 
             <div class="ms-3 me-3">
                 <div class="grids grid-center mt-5">
@@ -81,7 +81,7 @@
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-lg-5">
-                        <h3><em>04</em> <?= displaylanguage($lang, 'Our Services TC', 'Our Services SC', 'Our Services'); ?></h3>
+                        <h3><em>04</em> <?= displaylanguage($lang, '我們的服務', '我们的服务', 'Our Services'); ?></h3>
                     </div>
                     <div class="col-lg-7">
                         <div class="col-content">
@@ -114,7 +114,7 @@
     <!-- OWC -->
     <div class="section">
         <div class="container">
-            <h2><?= displaylanguage($lang, 'Our Wonderful Clients TC', 'Our Wonderful Clients SC', 'Our Wonderful Clients'); ?></h2>
+            <h2><?= displaylanguage($lang, '我們的客戶', '我们的客户', 'Our Wonderful Clients'); ?></h2>
             <div class="row mt-5 gy-5">
                 <?php foreach ($getAllOWCData as $rowOWC): ?>
                     <div class="col-6 col-md-4 col-lg-2">

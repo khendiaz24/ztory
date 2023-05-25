@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="col-content col-content-md">
-                        <h2><?= $getProjectData['title'.cnvrtlng($lang)]; ?></h2>
+                        <h2 class="green-text uppercase"><?= $getProjectData['title'.cnvrtlng($lang)]; ?></h2>
                         <p class="lead"><?= $getProjectData['description'.cnvrtlng($lang)]; ?></p>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
             ?>
             <div class="container">
                 <div class="col-content-md ms-auto">
-                    <p class="lead"><?= $xIntroDetails[1]; ?></p>
+                    <p class="lead-big"><?= $xIntroDetails[1]; ?></p>
                 </div>
             </div>
             <div class="swiper-holder mt-7 mb-4 pt-5 pt-md-0">
@@ -76,7 +76,7 @@
                 <div class="col-content-md ms-auto">
                     <?php 
                         for ($i = 2; $i < count($xIntroDetails); $i++) {
-                            echo "<p class='lead'>".$xIntroDetails[$i]."</p>";
+                            echo "<p class='lead-big'>".$xIntroDetails[$i]."</p>";
                         }
                     ?>
                 </div>
@@ -100,7 +100,7 @@
                             <h3><?= $getProjectData['lm_title'.cnvrtlng($lang)]; ?></h3>
                             <p class="lead"><?= $getProjectData['lm_short_details'.cnvrtlng($lang)]; ?></p>
                             <a href="<?= base_url($lang.'/learn_more_about_project/'.$getProjectData['url']); ?>" class="btn-link mt-4">
-                            <?= displaylanguage($lang, 'LEARN MORE ABOUT', 'LEARN MORE ABOUT', 'LEARN MORE ABOUT'); ?> <?= strtoupper($getProjectData['lm_title'.cnvrtlng($lang)]); ?>
+                            <?= displaylanguage($lang, '了解', '了解', 'LEARN MORE ABOUT '); ?><?= strtoupper($getProjectData['lm_title'.cnvrtlng($lang)]); ?>
                             </a>
                         </div>
                     </div>
@@ -129,7 +129,14 @@
 
                 <?php foreach ($getBAData as $rowBA): ?>
                     <div class="col-graphics mb-4">
-                        <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowBA['image']); ?>" alt="">
+                        <?php if (!empty($rowBA['link'])) { ?>
+                            <div class="video-banner video-thumbs" data-toggle="video">
+                                <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowBA['image']); ?>" alt="" title="">
+                                <iframe class="video-player" src="<?= $rowBA['link']; ?>&color=ef0800&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        <?php } else { ?>
+                            <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowBA['image']); ?>" alt="">
+                        <?php } ?>
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
@@ -148,7 +155,7 @@
 
                             for ($i = 0; $i < count($xBVDetails); $i++) {
                                 if (!empty($xBVDetails[$i])) {
-                                    echo "<p class='lead'>".$xBVDetails[$i]."</p>";
+                                    echo "<p class='lead-big'>".$xBVDetails[$i]."</p>";
                                 }
                             }
                         ?>
@@ -247,7 +254,7 @@
 
                         for ($i = 0; $i < count($xEventsDetails); $i++) {
                             if (!empty($xEventsDetails[$i])) {
-                                echo "<p class='lead'>".$xEventsDetails[$i]."</p>";
+                                echo "<p class='lead-big'>".$xEventsDetails[$i]."</p>";
                             }
                         }
                     ?>

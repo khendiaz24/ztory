@@ -10,6 +10,8 @@
 
   &.section-hero {
 
+    max-height: 100vh;
+
     .img-objectfit {
 
       min-height: 500px;
@@ -57,8 +59,7 @@
 
   &.section-hero-inner {
 
-    min-height: 500px;
-    height: 75vh;
+    min-height: 450px;
 
     h1 {
 
@@ -79,6 +80,11 @@
 
     }
 
+    .img-objectfit {
+
+      min-height: 450px;
+    }
+
     @include media-breakpoint-down(lg) {
 
       h1 {
@@ -87,9 +93,24 @@
       }
     }
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
 
-      height: 500px;
+      min-height: 100%;
+      height: auto;
+
+      .hero-content {
+
+        position: relative;
+        padding-top: 50px;
+        padding-bottom: 30px;
+      }
+
+      .img-objectfit {
+
+        margin-top: 60px;
+        height: auto;
+        min-height: 100%;
+      }
     }
   }
 
@@ -136,7 +157,7 @@
 
   .section-inner {
 
-    border-bottom: 1px solid rgba($green, 0.2);
+    border-bottom: 1px solid rgba(244,248,239, 0.4);
     margin-bottom: 60px;
     padding-bottom: 60px;
 
