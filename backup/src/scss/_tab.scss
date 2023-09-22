@@ -1,0 +1,86 @@
+.tab-nav {
+
+    &.tab-big {
+
+        max-width: 750px;
+
+        li {
+
+            margin-left: 0;
+            margin-right: 10px;
+            margin-top: 12px;
+
+            a {
+
+                text-transform: uppercase;
+
+                &.active {
+
+                    opacity: 1;
+                    border-color: transparent;
+
+                    &:after {
+
+                        bottom: 5px;
+                        left: 50%;
+                        width: calc(100% - 40px);
+                        @include transform(translateX(-50%));
+                        border-color: $green;
+                    }
+                }
+            }
+        }
+    }
+
+    li {
+  
+      display: inline-block;
+      margin-left: 30px;
+  
+      a {
+  
+        position: relative;
+        display: block;
+        font-size: rem(24px);
+        color: $black;
+        padding-bottom: 3px;
+        opacity: .5;
+  
+        &:hover {
+  
+          opacity: 1;
+        }
+  
+        &.active {
+  
+          opacity: 1;
+  
+          &:after {
+  
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            content: '';
+            border-bottom: 1px solid $black;
+          }
+        }
+      }
+    }
+}
+
+.tab-panel {
+
+    .filters {
+
+      display: none;
+    }
+}
+
+.filters {
+
+  transition: visibility 0.3s, opacity 0.3s linear;
+  
+}
+  

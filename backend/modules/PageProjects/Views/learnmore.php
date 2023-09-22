@@ -29,9 +29,16 @@
 
      <div class="section dark p-0">
           <?php foreach ($getLMImagesData as $rowLM): ?>
-               <div class="col-graphics border">
-                    <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowLM['image']); ?>" alt="">
-               </div>
+               <?php if (!empty($rowLM['link'])) { ?>
+                    <div class="video-banner video-thumbs" data-toggle="video">
+                      <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowLM['image']); ?>" alt="" title="">
+                      <iframe class="video-player" src="<?= $rowLM['link']; ?>&color=ef0800&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+               <?php } else { ?>
+                    <div class="col-graphics border text-center pl-24 pr-24">
+                         <img class="img-max lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowLM['image']); ?>" alt="">
+                    </div>
+               <?php } ?>
           <?php endforeach; ?>
      </div>
 

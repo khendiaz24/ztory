@@ -117,13 +117,8 @@
 
         .card-body {
 
-            padding: 22px 22px 35px;
+            padding: 12px 12px 25px;
             background: $lgreen;
-
-            @include media-breakpoint-down(lg) {
-
-                padding: 20px;
-            }
         }
     }
 

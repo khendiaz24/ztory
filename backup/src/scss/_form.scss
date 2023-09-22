@@ -1,0 +1,46 @@
+.contact-form {
+
+  h4 {
+
+    color: $green;
+  }
+
+  label {
+
+    text-align: left;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .form-control {
+    
+    border: 0;
+    border-bottom: 1px solid $white;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    color: $white;
+    padding-left: 0;
+    padding-right: 0;
+
+    &::placeholder {
+
+      color: rgba($white, 0.6);
+    }
+  }
+
+  textarea {
+
+    padding: 10px !important;
+    border-radius: 10px !important;
+    height: 200px;
+  }
+
+  .btn-link {
+
+    font-size: rem(16px);
+    color: $white;
+    border: none;
+
+  }
+}

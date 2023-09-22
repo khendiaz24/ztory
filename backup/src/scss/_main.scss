@@ -1,0 +1,314 @@
+// this is area is for reserved class
+#main-container { 
+  width: 100%;
+  min-height: 100%;
+	position: relative;
+	flex-direction: column;
+  display: flex;
+  z-index: 1;
+  overflow: hidden;
+}
+
+main {
+  flex-direction: column;
+  position: relative;
+  flex: 1 1 auto;
+  z-index: 1;
+}
+
+.hide { position:relative; }
+.ease,a,input[type="submit"],button { @include transition(all 0.5s ease); }
+.ease2 { @include transition(all 0.3s ease); }
+.loader { position:relative; overflow:hidden; background:#fff url('../images/page_template/loading.gif') no-repeat center; }
+.auto { max-width:$maxWidth; margin-left: auto; margin-right: auto; }
+.img-auto { width: 100%; height: auto; }
+.img-objectfit {
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.container {
+
+  max-width: 1504px;
+}
+
+.zx1 { z-index: 1; }
+.zx2 { z-index: 2; }
+.zx3 { z-index: 3; }
+.zx4 { z-index: 4; }
+.zx5 { z-index: 5; }
+.zx6 { z-index: 6; }
+.overflow { overflow: hidden; }
+.pl-0 { padding-left: 0; }
+.pr-0 { padding-right: 0; }
+
+.preloader { position:fixed; width:100%; height:100%; overflow:hidden; }
+.explorer .preloader { background:#fff url('../images/page_template/loading.gif') no-repeat center; }
+.explorer .preloader .spinner { display:none; }
+// this is area is for reserved class
+
+// you can include here the rest of your class name eg. home page
+
+.mt-7 {
+
+  margin-top: 70px;
+}
+
+.mb-7 {
+
+  margin-bottom: 70px;
+}
+
+.container-md {
+
+  max-width: 900px;
+}
+
+.container-sm {
+
+  max-width: 800px;
+}
+
+ul {
+
+  padding: 0;
+}
+
+.btn-link {
+
+  display: inline-block;
+  position: relative;
+  padding-bottom: 3px;
+  text-decoration: none;
+  color: $dgreen;
+  background: none;
+
+  &::after {
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 2px solid $green;
+    width: 100%;
+    height: 1px;
+    content: '';
+  }
+
+  &.white {
+
+    color: $white;
+  }
+
+  &.big {
+
+    font-size: rem(22px);
+  }
+
+  &:hover {
+
+    color: $green !important;
+  }
+
+}
+
+.btn-block {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: $dgreen;
+  color: $white;
+  text-transform: uppercase;
+  text-align: center;
+  height: 100px;
+
+  &:hover {
+
+    background: darken($dgreen, 5%);
+    color: $green;
+  }
+}
+
+.btn-outline {
+
+  font-size: rem(15px) !important;
+  padding: 8px 20px !important;
+  border-radius: 30px;
+  border: 1px solid $white;
+  color: $white !important;
+}
+
+.mt-7 {
+
+  margin-top: 70px;
+}
+
+.mt-10 {
+
+  margin-top: 10% !important;
+}
+
+.ddgreen {
+
+  color: $white;
+  background: $ddgreen;
+}
+
+.dark {
+
+  color: $white;
+  background: $gray;
+}
+
+
+.col-content {
+
+  a {
+
+    color: $black;
+  }
+}
+
+.col-content-sm {
+
+  max-width: 500px;
+}
+
+.col-content-md {
+
+  max-width: 700px;
+}
+
+.col-content-md-lg {
+
+  max-width: 700px;
+
+  @include media-breakpoint-down(lg) {
+
+    max-width: 100%;
+  }
+}
+
+.col-content-right {
+
+  margin-left: auto;
+}
+
+.col-grid {
+
+  h4 {
+
+    margin-top: 30px;
+  }
+}
+
+.col-graphics {
+  position: relative;
+
+  &.border {
+
+    border: 0 !important;
+    border-bottom: 1px solid lighten($gray, 10%) !important;
+  }
+}
+
+.title-border-sm {
+
+  position: relative;
+  padding-bottom: 5px;
+
+  &::after {
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 20px;
+    height: 2px;
+    content: '';
+    border-top: 2px solid $green;
+  }
+}
+
+.list {
+
+  li {
+
+    margin-bottom: 5px;
+  }
+}
+
+.w-80 {
+
+  width: 80% !important;
+}
+
+.w-40 {
+
+  width: 41% !important;
+}
+
+.authors-list {
+
+  span {
+
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+.text-green {
+
+  color: $green;
+}
+
+.badge {
+
+  display: inline-block;
+  font-size: rem(14px);
+  padding: 8px 15px;
+  background: $green;
+  border-radius: 3px;
+  color: $black;
+}
+
+article {
+
+  font-size: rem(22px);
+
+  small {
+
+    display: inline-block;
+    font-size: rem(15px);
+    margin-top: 15px;
+
+    + p {
+
+      margin-top: 70px;
+    }
+  }
+
+  p {
+
+    + img {
+
+      margin-top: 70px;
+    }
+  }
+}
+
+.article-sm {
+
+  max-width: 800px;
+
+  @include media-breakpoint-down(lg) {
+
+    max-width: 100%;
+  }
+}
+
+

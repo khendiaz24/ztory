@@ -18,8 +18,6 @@
      <!-- Custom Stylesheet -->
      <link rel="stylesheet" href="<?= base_url(); ?>/public/themes/frontend/dist/css/style.css" media="all"/>
 
-     <script src="<?= base_url(); ?>/public/themes/frontend/dist/js/pace.min.js"></script>
-
      <!-- Favicons -->
      <link rel="shortcut icon" href="<?= base_url(); ?>/public/themes/frontend/dist/images/favicon/favicon.ico">
      <link rel="apple-touch-icon" href="<?= base_url(); ?>/public/themes/frontend/dist/images/favicon/apple-touch-icon.png">
@@ -45,13 +43,13 @@
                               <nav class="menu">
                                    <ul>
                                         <li>
-                                             <a href="<?= base_url($lang.'/projects'); ?>"><?= displaylanguage($lang, '項目', '项目', 'Projects'); ?></a>
+                                             <a href="<?= base_url($lang.'/projects'); ?>"><?= displaylanguage($lang, '作品', '作品', 'Projects'); ?></a>
                                         </li>
                                         <li>
-                                             <a href="<?= base_url($lang.'/aboutus'); ?>"><?= displaylanguage($lang, '了解我們', '了解我们', 'About'); ?></a>
+                                             <a href="<?= base_url($lang.'/aboutus'); ?>"><?= displaylanguage($lang, '關於我們', '关于我们', 'About'); ?></a>
                                         </li>
                                         <li>
-                                             <a href="<?= base_url($lang.'/brandteller'); ?>"><?= displaylanguage($lang, '品牌贏家', '品牌赢家', 'Brandteller'); ?></a>
+                                             <a href="<?= base_url($lang.'/brandteller'); ?>"><?= displaylanguage($lang, '案例分析', '案例分析', 'Brandteller'); ?></a>
                                         </li>
                                         <li>
                                              <a href="<?= base_url($lang.'/contactus'); ?>"><?= displaylanguage($lang, '聯絡我們', '联络我们', 'Contact'); ?></a>
@@ -134,13 +132,13 @@
                <div class="menu-holder mt-4">
                     <ul>
                          <li>
-                              <a href="<?= base_url($lang.'/projects'); ?>"><?= displaylanguage($lang, '項目', '项目', 'Projects'); ?></a>
+                              <a href="<?= base_url($lang.'/projects'); ?>"><?= displaylanguage($lang, '作品', '作品', 'Projects'); ?></a>
                          </li>
                          <li>
-                              <a href="<?= base_url($lang.'/aboutus'); ?>"><?= displaylanguage($lang, '了解我們', '了解我们', 'About'); ?></a>
+                              <a href="<?= base_url($lang.'/aboutus'); ?>"><?= displaylanguage($lang, '關於我們', '关于我们', 'About'); ?></a>
                          </li>
                          <li>
-                              <a href="<?= base_url($lang.'/brandteller'); ?>"><?= displaylanguage($lang, '品牌贏家', '品牌赢家', 'Brandteller'); ?></a>
+                              <a href="<?= base_url($lang.'/brandteller'); ?>"><?= displaylanguage($lang, '案例分析', '案例分析', 'Brandteller'); ?></a>
                          </li>
                          <li>
                               <a href="<?= base_url($lang.'/contactus'); ?>"><?= displaylanguage($lang, '聯絡我們', '联络我们', 'Contact'); ?></a>

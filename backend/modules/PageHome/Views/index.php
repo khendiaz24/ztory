@@ -103,12 +103,13 @@
                     </div>
 
                     <div class="tab-panel mt-3 d-block d-md-none">
-                        <div class="col-graphics filters tab0" style="display:block;">
-                            <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/home/'.$getHomeContentData['bt_image']); ?>" alt="">
-                        </div>
-                        <div class="col-graphics filters tab1">
-                            <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/home/'.$getHomeContentData['bt_image']); ?>" alt="">
-                        </div>
+                        <?php $FBICtr = 0; ?>
+                        <?php foreach ($getFeaturedBrandtellerData as $rowFBI): ?>
+                            <div class="col-graphics filters tab<?= $FBICtr; ?>" style="<?= ($FBICtr == 0) ? 'display:block;' :''; ?>">
+                                <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/brandteller/'.$brandtellerDataLists[$rowFBI['brandteller_id']]['big_image']); ?>" alt="">
+                            </div>
+                            <?php $FBICtr++; ?>
+                        <?php endforeach; ?>
                     </div>
 
                 </div>

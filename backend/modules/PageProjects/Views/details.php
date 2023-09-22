@@ -54,7 +54,7 @@
             ?>
             <div class="container">
                 <div class="col-content-md ms-auto">
-                    <p class="lead-big"><?= $xIntroDetails[1]; ?></p>
+                    <p class="lead"><?= $xIntroDetails[1]; ?></p>
                 </div>
             </div>
             <div class="swiper-holder mt-7 mb-4 pt-5 pt-md-0">
@@ -76,7 +76,7 @@
                 <div class="col-content-md ms-auto">
                     <?php 
                         for ($i = 2; $i < count($xIntroDetails); $i++) {
-                            echo "<p class='lead-big'>".$xIntroDetails[$i]."</p>";
+                            echo "<p class='lead'>".$xIntroDetails[$i]."</p>";
                         }
                     ?>
                 </div>
@@ -111,7 +111,7 @@
                 <!-- Project Details -->
                 <div class="row gx-lg-5 mb-5">
                     <div class="col-md-6">
-                        <div class="col-content">
+                        <div class="col-content col-content-lead-p">
                             <h3><?= $getProjectData['ba_header'.cnvrtlng($lang)]; ?></h3>
                             <?php
                                 $ba_details = $getProjectData['ba_details'.cnvrtlng($lang)];
@@ -155,7 +155,7 @@
 
                             for ($i = 0; $i < count($xBVDetails); $i++) {
                                 if (!empty($xBVDetails[$i])) {
-                                    echo "<p class='lead-big'>".$xBVDetails[$i]."</p>";
+                                    echo "<p class='lead'>".$xBVDetails[$i]."</p>";
                                 }
                             }
                         ?>
@@ -166,9 +166,18 @@
                 <div class="swiper" data-loop="true" data-center="" data-effect="slide" data-delay="3500" data-gap="20" data-sm-perview="auto" data-md-perview="auto" data-lg-perview="auto">
                     <div class="swiper-wrapper">
                         <?php foreach ($getBVData as $rowBV): ?>
-                            <div class="swiper-slide w-80">
-                                <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowBV['image']); ?>" alt="">
-                            </div>
+                            <?php if (!empty($rowBV['link'])) { ?>
+                                <div class="swiper-slide w-80">
+                                    <div class="video-banner video-thumbs" data-toggle="video">
+                                        <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowBV['image']); ?>" alt="" title="">
+                                        <iframe class="video-player" src="<?= $rowBV['link']; ?>&color=ef0800&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            <?php } else { ?>
+                                <div class="swiper-slide w-80">
+                                    <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowBV['image']); ?>" alt="">
+                                </div>
+                            <?php } ?>
                         <?php endforeach; ?>
                     </div>
                 </div>
@@ -234,6 +243,15 @@
                                     <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowMD['right_bottom_image_3']); ?>" alt="">
                                 </div>
                             </div>
+                        <?php } else { ?>
+                            <div class="col-12">
+                                <div class="col-graphics mb-4">
+                                    <div class="video-banner video-thumbs" data-toggle="video">
+                                        <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowMD['thumbnail']); ?>" alt="" title="">
+                                        <iframe class="video-player" src="<?= $rowMD['link']; ?>&color=ef0800&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
                         <?php } ?>
                     <?php endforeach; ?>
                 </div>
@@ -254,7 +272,7 @@
 
                         for ($i = 0; $i < count($xEventsDetails); $i++) {
                             if (!empty($xEventsDetails[$i])) {
-                                echo "<p class='lead-big'>".$xEventsDetails[$i]."</p>";
+                                echo "<p class='lead'>".$xEventsDetails[$i]."</p>";
                             }
                         }
                     ?>
@@ -265,9 +283,18 @@
                 <div class="swiper" data-loop="true" data-center="" data-effect="slide" data-delay="3500" data-gap="20" data-sm-perview="auto" data-md-perview="auto" data-lg-perview="auto">
                     <div class="swiper-wrapper">
                         <?php foreach ($getEventImagesData as $rowEvents): ?>
-                            <div class="swiper-slide w-80">
-                                <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowEvents['image']); ?>" alt="">
-                            </div>
+                            <?php if (!empty($rowEvents['link'])) { ?>
+                                <div class="swiper-slide w-80">
+                                    <div class="video-banner video-thumbs" data-toggle="video">
+                                        <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowEvents['image']); ?>" alt="" title="">
+                                        <iframe class="video-player" src="<?= $rowEvents['link']; ?>&color=ef0800&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            <?php } else { ?>
+                                <div class="swiper-slide w-80">
+                                    <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowEvents['image']); ?>" alt="">
+                                </div>
+                            <?php } ?>
                         <?php endforeach; ?>
                     </div>
                 </div>

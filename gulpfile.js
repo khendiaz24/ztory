@@ -73,7 +73,7 @@ function scripts() {
 
   var script = src([    
     paths.scripts.src + '/device-detect.js',
-    paths.scripts.src + '/loader.js',
+    // paths.scripts.src + '/loader.js',
     paths.scripts.src + '/ui-tab-filter.js',
     paths.scripts.src + '/dropdown.js',
     paths.scripts.src + '/scroll.js',
