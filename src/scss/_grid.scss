@@ -1,6 +1,13 @@
 .grid-img {
 
 	position: relative;
+
+	&.grid-flex {
+
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
 	
 	.gird-caption {
 
@@ -48,6 +55,29 @@
 		.grid-inner {
 
 			margin: 50px;
+		}
+	}
+
+	.grid-top-text {
+
+		margin-bottom: 30px;
+		flex-grow: 1;
+
+		h5 {
+
+			font-weight: 300;
+			font-size: rem(18px);
+		}
+
+		strong {
+
+			display: inline-block;
+			font-weight: 500;
+			font-size: rem(16px);
+			margin-bottom: 10px;
+			padding-bottom: 2px;
+			padding-right: 10px;
+			border-bottom: 2px solid $green;
 		}
 	}
 

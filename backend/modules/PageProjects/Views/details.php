@@ -26,12 +26,12 @@
                 </div>
                 <div class="col-lg-4 mt-4 mt-lg-0">
                     <div class="col-content">
-                        <h4 class="title-border-sm"><?= displaylanguage($lang, 'Client', 'Client', 'Client'); ?></h4>
+                        <h4 class="title-border-sm"><?= displaylanguage($lang, '客戶', '客戶', 'Client'); ?></h4>
                         <ul class="list">
                             <li><?= $getProjectData['client'.cnvrtlng($lang)]; ?></li>
                         </ul>
                         <?php if (!empty($getProjectData['wwd'])): ?>
-                            <h4 class="title-border-sm mt-5"><?= displaylanguage($lang, 'What We Did', 'What We Did', 'What We Did'); ?></h4>
+                            <h4 class="title-border-sm mt-5"><?= displaylanguage($lang, '服務類型', '服务类型', 'What We Did'); ?></h4>
                             <?= $getProjectData['wwd'.cnvrtlng($lang)]; ?>
                         <?php endif; ?>
                     </div>
@@ -62,7 +62,14 @@
                     <div class="swiper-wrapper">
                         <?php foreach ($getIntroImagesData as $rowI): ?>
                             <div class="swiper-slide">
-                                <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowI['image']); ?>" alt="">
+                                <?php if (!empty($rowI['link'])) { ?>
+                                    <div class="video-banner video-thumbs" data-toggle="video">
+                                        <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowI['image']); ?>" alt="" title="">
+                                        <iframe class="video-player" src="<?= $rowI['link']; ?>&color=ef0800&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                <?php } else { ?>
+                                    <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowI['image']); ?>" alt="">
+                                <?php } ?>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -128,16 +135,48 @@
                 </div>
 
                 <?php foreach ($getBAData as $rowBA): ?>
-                    <div class="col-graphics mb-4">
-                        <?php if (!empty($rowBA['link'])) { ?>
-                            <div class="video-banner video-thumbs" data-toggle="video">
-                                <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowBA['image']); ?>" alt="" title="">
-                                <iframe class="video-player" src="<?= $rowBA['link']; ?>&color=ef0800&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+					    <div class="row gx-4">
+                            <?php if ($rowBA['type'] == '2') { ?>
+                                <!-- Side to Side Image -->
+                                <div class="col-md-6">
+                                    <div class="col-graphics mb-4">
+                                        <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowBA['left_image_2']); ?>" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="col-graphics mb-4">
+                                        <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowBA['right_image_2']); ?>" alt="">
+                                    </div>
+                                </div>
+                            <?php } else if ($rowBA['type'] == '3') { ?>
+                                <!-- 3 Image Display -->
+                                <div class="col-md-6">
+                                    <div class="col-graphics mb-4" style="height: calc(100% - 20px);">
+                                        <img class="img-objectfit lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowBA['left_image_3']); ?>" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="col-graphics mb-4">
+                                        <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowBA['right_top_image_3']); ?>" alt="">
+                                    </div>
+                                    <div class="col-graphics mb-4">
+                                        <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowBA['right_bottom_image_3']); ?>" alt="">
+                                    </div>
+                                </div>
+                            <?php } ?>
+					    </div>
+                        <?php if ($rowBA['type'] == '1' || $rowBA['type'] == '0' || $rowBA['type'] == '4') { ?>
+                            <div class="col-graphics mb-4">
+                                <?php if (!empty($rowBA['link'])) { ?>
+                                    <div class="video-banner video-thumbs" data-toggle="video">
+                                        <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowBA['image']); ?>" alt="" title="">
+                                        <iframe class="video-player" src="<?= $rowBA['link']; ?>&color=ef0800&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                <?php } else { ?>
+                                    <img class="img-auto lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowBA['image']); ?>" alt="">
+                                <?php } ?>                        
                             </div>
-                        <?php } else { ?>
-                            <img class="img-fluid lazyload" src="<?= base_url('public/assets/uploads/projects/'.$rowBA['image']); ?>" alt="">
                         <?php } ?>
-                    </div>
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
@@ -317,6 +356,36 @@
             </div>
         <?php endif; ?>
     </div>
+
+    <!-- Related Projects Start -->
+    <div class="section pt-0" style="display: none">
+        <div class="container">
+            <h3>Related Projects</h3>
+            <div class="row gy-4 gy-sm-0">
+                <div class="col-sm-6">
+                    <div class="grid-img grid-flex">
+                        <a href="" class="stretched-link"></a>
+                        <div class="grid-top-text">
+                            <strong>Eu Yan Sang</strong>
+                            <h5>A Daring Makeover for a Legendary Brand</h5>
+                        </div>
+                        <img class="img-auto" src="<?= base_url(); ?>/public/themes/frontend/dist/images/projects/related-post-1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="grid-img grid-flex">
+                        <a href="" class="stretched-link"></a>
+                        <div class="grid-top-text">
+                            <strong>Design  Spectrum</strong>
+                            <h5>Let the Charm Speak for Itself - Naming and Designing</h5>
+                        </div>
+                        <img class="img-auto" src="<?= base_url(); ?>/public/themes/frontend/dist/images/projects/related-post-2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Related Projects End -->
 </div>
 
 <?= $this->endSection(); ?>
